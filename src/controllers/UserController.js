@@ -55,7 +55,19 @@ module.exports = {
       })
     } catch (err) {
       res.status(500).send({
-        error: 'An error has occured trying to log in'
+        error: 'An error has occurred while trying to log in'
+      })
+    }
+  },
+  async deleteAll (req, res) {
+    try {
+      await User.truncate()
+      res.send({
+        message: 'All users removed from database'
+      })
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occurred while trying to remove all users'
       })
     }
   }
