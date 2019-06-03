@@ -13,8 +13,12 @@ module.exports = (app) => {
   app.post('/user/login',
     UserController.login
   )
+  app.delete('/users',
+    UserController.deleteAll
+  )
   app.get('/movies/search',
     MovieControllerPolicy.search,
     isAuthenticated,
-    MovieController.search)
+    MovieController.search
+  )
 }

@@ -2,7 +2,7 @@
 
 ## URL
 
-> The server is deployed here :
+> The server is deployed here:
 > https://vue-js-backend.herokuapp.com/
 
 ## Build Setup
@@ -21,4 +21,6 @@ $ npm start
 
 ## Documentation
 
-The swagger documentation is available on the /api-docs API
+The swagger documentation is available on the `/api-docs` API
+
+Note: You can remove all users from the database with the endpoint `DELETE /users`.
