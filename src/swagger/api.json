@@ -122,7 +122,10 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Movie"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Movie"
+              }
             }
           },
           "400": {

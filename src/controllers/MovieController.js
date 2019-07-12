@@ -17,8 +17,7 @@ const lowerCaseKeys = object => {
 
 module.exports = {
   search (req, res) {
-    console.log(config.omdbapi.secretKey)
-    request.get(`http://www.omdbapi.com/?t=${req.query.title}&plot=full&apikey=${config.omdbapi.secretKey}`, (err, callResponse) => {
+    request.get(`http://www.omdbapi.com/?s=${req.query.title}&plot=full&apikey=${config.omdbapi.secretKey}`, (err, callResponse) => {
       res.set('Content-Type', 'application/json')
       if (err) {
         return res.status(400).send(err)
@@ -31,12 +30,12 @@ module.exports = {
           error
         })
       }
-      if (body.error) {
+      if (body.error || !body.search) {
           return res.status(404).send({
-            error: body.error
+            error: body.error || 'No results found'
           })
       }
-      res.send(body)
+      res.send(body.search)
     })
   }
 }
