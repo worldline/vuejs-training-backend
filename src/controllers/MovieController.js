@@ -33,7 +33,7 @@ module.exports = {
       }
       if (body.error) {
           return res.status(404).send({
-            error: body
+            error: body.error
           })
       }
       res.send(body)
