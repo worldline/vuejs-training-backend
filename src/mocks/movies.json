@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Star Wars: Episode V - The Empire Strikes Back",
+    "year": "1980",
+    "rated": "PG",
+    "released": "20 Jun 1980",
+    "runtime": "124 min",
+    "genre": "Action, Adventure, Fantasy, Sci-Fi",
+    "director": "Irvin Kershner",
+    "writer": "Leigh Brackett (screenplay by), Lawrence Kasdan (screenplay by), George Lucas (story by)",
+    "actors": "Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams",
+    "plot": "Luke Skywalker, Han Solo, Princess Leia and Chewbacca face attack by the Imperial forces and its AT-AT walkers on the ice planet Hoth. While Han and Leia escape in the Millennium Falcon, Luke travels to Dagobah in search of Yoda. Only with the Jedi master's help will Luke survive when the dark side of the Force beckons him into the ultimate duel with Darth Vader.",
+    "language": "English",
+    "country": "USA",
+    "awards": "Won 1 Oscar. Another 21 wins & 19 nominations.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "source": "Internet Movie Database",
+        "value": "8.7/10"
+      },
+      {
+        "source": "Rotten Tomatoes",
+        "value": "95%"
+      },
+      {
+        "source": "Metacritic",
+        "value": "82/100"
+      }
+    ],
+    "metascore": "82",
+    "imdbrating": "8.7",
+    "imdbvotes": "1,059,065",
+    "imdbid": "tt0080684",
+    "type": "movie",
+    "dvd": "21 Sep 2004",
+    "boxoffice": "$4,548,170",
+    "production": "Twentieth Century Fox",
+    "website": "http://www.starwars.com/episode-v/",
+    "response": "True"
+  },
+  {
+    "title": "Star Wars: Episode VI - Return of the Jedi",
+    "year": "1983",
+    "rated": "PG",
+    "released": "25 May 1983",
+    "runtime": "131 min",
+    "genre": "Action, Adventure, Fantasy, Sci-Fi",
+    "director": "Richard Marquand",
+    "writer": "Lawrence Kasdan (screenplay by), George Lucas (screenplay by), George Lucas (story by)",
+    "actors": "Mark Hamill, Harrison Ford, Carrie Fisher, Billy Dee Williams",
+    "plot": "Luke Skywalker battles horrible Jabba the Hut and cruel Darth Vader to save his comrades in the Rebel Alliance and triumph over the Galactic Empire. Han Solo and Princess Leia reaffirm their love and team with Chewbacca, Lando Calrissian, the Ewoks and the androids C-3PO and R2-D2 to aid in the disruption of the Dark Side and the defeat of the evil emperor.",
+    "language": "English",
+    "country": "USA",
+    "awards": "Nominated for 4 Oscars. Another 20 wins & 16 nominations.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "source": "Internet Movie Database",
+        "value": "8.3/10"
+      },
+      {
+        "source": "Rotten Tomatoes",
+        "value": "81%"
+      },
+      {
+        "source": "Metacritic",
+        "value": "58/100"
+      }
+    ],
+    "metascore": "58",
+    "imdbrating": "8.3",
+    "imdbvotes": "867,169",
+    "imdbid": "tt0086190",
+    "type": "movie",
+    "dvd": "12 Sep 2006",
+    "boxoffice": "N/A",
+    "production": "Twentieth Century Fox",
+    "website": "http://www.starwars.com/episode-vi/",
+    "response": "True"
+  },
+  {
+    "title": "Star Wars: Episode VII - The Force Awakens",
+    "year": "2015",
+    "rated": "PG-13",
+    "released": "18 Dec 2015",
+    "runtime": "136 min",
+    "genre": "Action, Adventure, Fantasy, Sci-Fi",
+    "director": "J.J. Abrams",
+    "writer": "Lawrence Kasdan, J.J. Abrams, Michael Arndt, George Lucas (based on characters created by)",
+    "actors": "Harrison Ford, Mark Hamill, Carrie Fisher, Adam Driver",
+    "plot": "30 years after the defeat of Darth Vader and the Empire, Rey, a scavenger from the planet Jakku, finds a BB-8 droid that knows the whereabouts of the long lost Luke Skywalker. Rey, as well as a rogue stormtrooper and two smugglers, are thrown into the middle of a battle between the Resistance and the daunting legions of the First Order.",
+    "language": "English",
+    "country": "USA",
+    "awards": "Nominated for 5 Oscars. Another 57 wins & 123 nominations.",
+    "poster": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
+    "ratings": [
+      {
+        "source": "Internet Movie Database",
+        "value": "8.0/10"
+      },
+      {
+        "source": "Rotten Tomatoes",
+        "value": "92%"
+      },
+      {
+        "source": "Metacritic",
+        "value": "81/100"
+      }
+    ],
+    "metascore": "81",
+    "imdbrating": "8.0",
+    "imdbvotes": "786,369",
+    "imdbid": "tt2488496",
+    "type": "movie",
+    "dvd": "05 Apr 2016",
+    "boxoffice": "$936,658,640",
+    "production": "Walt Disney Pictures",
+    "website": "http://starwars.com/",
+    "response": "True"
+  }
+]

@@ -1,6 +1,6 @@
 {
   "name": "vuejs-training-backend",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "Vue.js training backend",
   "main": "src/app.js",
   "engines": {
@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node src/app.js",
+    "start-with-mock": "MOCK=true node src/app.js",
     "serve": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,10 +30,11 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "pg": "^7.11.0",
+    "pg": "^7.12.0",
     "request": "^2.88.0",
-    "sequelize": "^5.10.2",
-    "swagger-ui-express": "^4.0.6"
+    "sequelize": "^5.12.0",
+    "sqlite3": "^4.0.9",
+    "swagger-ui-express": "^4.0.7"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
