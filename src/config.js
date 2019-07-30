@@ -21,6 +21,7 @@ module.exports = {
     jwtSecret: process.env.JWT_SECRET || 'secret'
   },
   omdbapi: {
-    secretKey: process.env.OMDBAPI_KEY
+    secretKey: process.env.OMDBAPI_KEY,
+    maxCalls: process.env.MAX_OMDBAPI_CALLS || 4
   }
 }

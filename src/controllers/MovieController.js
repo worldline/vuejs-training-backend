@@ -1,7 +1,8 @@
 const _ = require('lodash')
 const request = require('request')
 const config = require('../config')
-const mockMovie = require('../mocks/movie');
+const mockMovies = require('../mocks/movies')
+const get = require('util').promisify(request.get)
 
 const lowerCaseKeys = object => {
   if (!object) {
@@ -17,30 +18,29 @@ const lowerCaseKeys = object => {
 }
 
 module.exports = {
-  search (req, res) {
-    console.log(config.omdbapi.secretKey)
+  async search (req, res) {
     if(process.env.MOCK === 'true') {
-      return res.send(mockMovie);
+      return res.send(mockMovies);
     }
-    request.get(`http://www.omdbapi.com/?t=${req.query.title}&plot=full&apikey=${config.omdbapi.secretKey}`, (err, callResponse) => {
-      res.set('Content-Type', 'application/json')
-      if (err) {
-        return res.status(400).send(err)
-      }
-      let body
-      try {
-        body = lowerCaseKeys(JSON.parse(callResponse.body))
-      } catch (error) {
-        return res.status(400).send({
-          error
+
+    try {
+      const response = await get(`http://www.omdbapi.com/?s=${req.query.title}&plot=full&apikey=${config.omdbapi.secretKey}`)
+      const body = lowerCaseKeys(JSON.parse(response.body))
+      if(!body || !body.search || body.error) {
+        return res.status(404).send({
+          error: body.error || 'No results'
         })
       }
-      if (body.error) {
-          return res.status(404).send({
-            error: body.error
-          })
-      }
-      res.send(body)
-    })
+
+      const moviesToFecth = body.search.map((movie, n = 0) => {
+        return (n < config.omdbapi.maxCalls && n++) ? get(`http://www.omdbapi.com/?i=${movie.imdbid}&plot=full&apikey=${config.omdbapi.secretKey}`) : null
+      })
+
+      const movies = await Promise.all(moviesToFecth.filter(item => !!item));
+      res.send(movies.map(movie => lowerCaseKeys(JSON.parse(movie.body))))
+
+    } catch(error) {
+      return res.status(400).send({error})
+    }
   }
 }
