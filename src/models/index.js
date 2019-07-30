@@ -4,12 +4,8 @@ const Sequelize = require('sequelize')
 const config = require('../config')
 const db = {}
 
-const sequelize = new Sequelize(
-  config.db.database,
-  config.db.user,
-  config.db.password,
-  config.db.options
-)
+const { database, user, password, options } = process.env.MOCK === 'true' ? config.db.local : config.db.default
+const sequelize = new Sequelize(database, user, password, options)
 
 fs
   .readdirSync(__dirname)

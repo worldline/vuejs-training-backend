@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const request = require('request')
 const config = require('../config')
+const mockMovie = require('../mocks/movie');
 
 const lowerCaseKeys = object => {
   if (!object) {
@@ -18,6 +19,9 @@ const lowerCaseKeys = object => {
 module.exports = {
   search (req, res) {
     console.log(config.omdbapi.secretKey)
+    if(process.env.MOCK === 'true') {
+      return res.send(mockMovie);
+    }
     request.get(`http://www.omdbapi.com/?t=${req.query.title}&plot=full&apikey=${config.omdbapi.secretKey}`, (err, callResponse) => {
       res.set('Content-Type', 'application/json')
       if (err) {
