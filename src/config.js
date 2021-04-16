@@ -8,7 +8,10 @@ module.exports = {
       options: {
         dialect: process.env.DB_DIALECT || 'postgres',
         host: process.env.DB_HOST || 'localhost',
-        port: process.env.DB_PORT || 5432
+        port: process.env.DB_PORT || 5432,
+        dialectOptions: {
+          ssl: process.env.DB_DIALECT_OPTIONS_SSL || true
+        }
       }
     },
     local: {
