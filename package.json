@@ -3,10 +3,6 @@
   "version": "2.0.0",
   "description": "Vue.js training backend",
   "main": "src/app.js",
-  "engines": {
-    "node": "8.12.0",
-    "npm": "6.4.1"
-  },
   "scripts": {
     "start": "node src/app.js",
     "start-with-mock": "MOCK=true node src/app.js",
@@ -21,22 +17,22 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.19.1",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "joi": "^14.3.1",
+    "express": "^4.17.2",
+    "joi": "^17.5.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.19",
-    "morgan": "^1.9.1",
-    "passport": "^0.4.0",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
-    "pg": "^7.12.0",
+    "pg": "^8.7.1",
     "request": "^2.88.0",
-    "sequelize": "^5.15.1",
-    "sqlite3": "^4.0.9",
-    "swagger-ui-express": "^4.0.7"
+    "sequelize": "^6.14.1",
+    "sqlite3": "^5.0.2",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^2.0.15"
   }
 }

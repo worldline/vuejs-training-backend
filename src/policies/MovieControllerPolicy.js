@@ -2,11 +2,11 @@ const Joi = require('joi')
 
 module.exports = {
   search (req, res, next) {
-    const schema = {
+    const schema = Joi.object({
       title: Joi.string().min(1).required(),
-    }
+    })
 
-    const {error} = Joi.validate(req.query, schema)
+    const {error} = schema.validate(req.query)
 
     if (error) {
       switch (error.details[0].context.key) {
