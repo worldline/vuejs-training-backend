@@ -3,10 +3,6 @@
   "version": "2.0.0",
   "description": "Vue.js training backend",
   "main": "src/app.js",
-  "engines": {
-    "node": "8.12.0",
-    "npm": "6.4.1"
-  },
   "scripts": {
     "start": "node src/app.js",
     "start-with-mock": "MOCK=true node src/app.js",
