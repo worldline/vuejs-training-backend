@@ -10,7 +10,10 @@ module.exports = {
         host: process.env.DB_HOST || 'localhost',
         port: process.env.DB_PORT || 5432,
         dialectOptions: {
-          ssl: process.env.DB_DIALECT_OPTIONS_SSL || true
+          ssl: {
+            require: process.env.DB_DIALECT_OPTIONS_SSL_REQUIRE || true,
+            rejectUnauthorized: process.env.DB_DIALECT_OPTIONS_SSL_REJECT_UNAUTHORIZED || false
+          }
         }
       }
     },
