@@ -2,12 +2,14 @@
 
 ## URL
 
-> The server is deployed here:
-> https://vue-js-backend.herokuapp.com/
+> The server is deployed on heroku:
+> https://vue-js-backend.herokuapp.com/api-docs
+
+To trigger a new deployment, please use the [heroku dashboard](https://dashboard.heroku.com/apps/vue-js-backend)
 
 ## Build Setup
 
-* Start the server in nominal environment :
+* Start the server in nominal environment:
 
 ``` bash
 # install dependencies
@@ -21,7 +23,7 @@ $ npm run serve
 ```
 Please note that you have to set some environment variables, see [configuration file](./src/config.js).
 
-* Start the server in mocked environment :
+* Start the server in mocked environment (SQLite3 + mocked omdbapi response):
 
 ``` bash
 # install dependencies
@@ -33,7 +35,7 @@ $ npm run start-with-mock
 
 ## Documentation
 
-The swagger documentation is available on the `/api-docs` API
+The swagger documentation is available on the `/api-docs` route.
 
 Note: You can remove all users from the database with the endpoint `DELETE /users`.
 
