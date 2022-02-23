@@ -9,7 +9,7 @@ module.exports = {
         dialect: process.env.DB_DIALECT || 'postgres',
         host: process.env.DB_HOST || 'localhost',
         port: process.env.DB_PORT || 5432,
-        dialectOptions: {
+        dialectOptions: !process.env.DB_DIALECT_OPTIONS ? {} : {
           ssl: {
             require: process.env.DB_DIALECT_OPTIONS_SSL_REQUIRE || true,
             rejectUnauthorized: process.env.DB_DIALECT_OPTIONS_SSL_REJECT_UNAUTHORIZED || false
