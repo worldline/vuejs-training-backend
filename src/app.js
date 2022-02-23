@@ -13,7 +13,8 @@ app.use(cors())
 app.options('*', cors())
 
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger/api.json');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./src/openapi.yaml');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 

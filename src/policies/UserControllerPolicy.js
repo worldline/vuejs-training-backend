@@ -9,9 +9,11 @@ module.exports = {
       lastname: Joi.string().required()
     })
 
+    console.log(`req body: ${JSON.stringify(req.body)}`)
     const {error} = schema.validate(req.body)
 
     if (error) {
+      console.log(`UserControllerPolicy error: ${error}`)
       switch (error.details[0].context.key) {
         case 'email':
           res.status(400).send({
