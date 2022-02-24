@@ -67,17 +67,13 @@ paths:
       x-codegen-request-body-name: body
   /movies/search:
     get:
+      security:
+      - bearerAuth: [bearerAuth]
       tags:
       - movies
       summary: Search movies from a title
       operationId: searchMovie
       parameters:
-      - name: Authorization
-        in: header
-        description: '`Bearer ${token}`'
-        required: true
-        schema:
-          type: string
       - name: title
         in: query
         description: The name of the movie to search
@@ -100,6 +96,10 @@ paths:
           description: Movie not found
           content: {}
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
   schemas:
     UserRegister:
       required:
