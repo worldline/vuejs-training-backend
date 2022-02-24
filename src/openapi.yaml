@@ -1,0 +1,247 @@
+openapi: 3.0.1
+info:
+  title: Movie search backend
+  description: Backend server for vue.js training
+  version: 1.1.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: https://vue-js-backend.herokuapp.com/
+    description: Production server on Heroku
+  - url: http://localhost:3030
+    description: Local testing (port 3030)
+tags:
+- name: user
+  description: API to register and log users
+- name: movies
+  description: API to search movies
+paths:
+  /user/register:
+    post:
+      tags:
+      - user
+      summary: Register a single user
+      operationId: register
+      requestBody:
+        description: User to register
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/UserRegister'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        400:
+          description: Parameters error
+          content: {}
+      x-codegen-request-body-name: body
+  /user/login:
+    post:
+      tags:
+      - user
+      summary: Log in a user
+      operationId: login
+      requestBody:
+        description: User to register
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        400:
+          description: Parameters error
+          content: {}
+      x-codegen-request-body-name: body
+  /movies/search:
+    get:
+      security:
+      - bearerAuth: [bearerAuth]
+      tags:
+      - movies
+      summary: Search movies from a title
+      operationId: searchMovie
+      parameters:
+      - name: title
+        in: query
+        description: The name of the movie to search
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movie'
+        400:
+          description: Parameters error
+          content: {}
+        404:
+          description: Movie not found
+          content: {}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    UserRegister:
+      required:
+      - email
+      - firstname
+      - lastname
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        password:
+          type: string
+    UserLogin:
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    UserResponse:
+      type: object
+      properties:
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            firstname:
+              type: string
+            lastname:
+              type: string
+            email:
+              type: string
+            created_at:
+              type: string
+              format: date
+            update_at:
+              type: string
+              format: date
+        token:
+          type: string
+    Movie:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Titanic
+        year:
+          type: string
+          example: "1997"
+        rated:
+          type: string
+          example: PG-13
+        released:
+          type: string
+          example: 19 Dec 1997
+        runtime:
+          type: string
+          example: 194 min
+        genre:
+          type: string
+          example: Drama, Romance
+        director:
+          type: string
+          example: James Cameron
+        writer:
+          type: string
+          example: James Cameron
+        actors:
+          type: string
+          example: Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates
+        plot:
+          type: string
+          example: 84 years later, a 100 year-old woman named Rose DeWitt Bukater
+            tells the story to her granddaughter Lizzy Calvert, Brock Lovett, Lewis
+            Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life
+            set in April 10th 1912, on a ship called Titanic when young Rose boards
+            the departing ship with the upper-class passengers and her mother, Ruth
+            DeWitt Bukater, and her fiancé, Caledon Hockley. Meanwhile, a drifter
+            and artist named Jack Dawson and his best friend Fabrizio De Rossi win
+            third-class tickets to the ship in a game. And she explains the whole
+            story from departure until the death of Titanic on its first and last
+            voyage April 15th, 1912 at 2:20 in the morning.
+        language:
+          type: string
+          example: English, Swedish
+        country:
+          type: string
+          example: USA
+        awards:
+          type: string
+          example: Won 11 Oscars. Another 111 wins & 77 nominations.
+        poster:
+          type: string
+          example: https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg
+        ratings:
+          type: array
+          items:
+            type: object
+            properties:
+              source:
+                type: string
+                example: Internet Movie Database
+              value:
+                type: string
+                example: 7.8/10
+        metascore:
+          type: string
+          example: "75"
+        imdbrating:
+          type: string
+          example: "7.8"
+        imdbvotes:
+          type: string
+          example: 939,048
+        imdbid:
+          type: string
+          example: tt0120338
+        type:
+          type: string
+          example: movie
+        dvd:
+          type: string
+          example: 10 Sep 2012
+        boxoffice:
+          type: string
+          example: N/A
+        production:
+          type: string
+          example: Paramount Pictures
+        website:
+          type: string
+          example: http://www.titanicmovie.com/
+        response:
+          type: string
+          example: True

@@ -1,19 +1,19 @@
 const express = require('express')
 const cors = require('cors')
-const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const { sequelize } = require('./models')
 
 const config = require('./config')
 
 const app = express()
-app.use(bodyParser.json())
+app.use(express.json()) // for parsing Content-Type: application/json
 app.use(morgan('combined'))
 app.use(cors())
 app.options('*', cors())
 
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger/api.json');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./src/openapi.yaml');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
