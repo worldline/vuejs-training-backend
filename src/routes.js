@@ -6,6 +6,7 @@ const MovieControllerPolicy = require('./policies/MovieControllerPolicy')
 const isAuthenticated = require('./policies/isAuthenticated')
 
 module.exports = (app) => {
+  app.get('/', (req, res) => res.send("Backend API is started 👍"))
   app.post('/user/register',
     UserControllerPolicy.register,
     UserController.register

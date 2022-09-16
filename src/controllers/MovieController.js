@@ -3,6 +3,7 @@ const request = require('request')
 const config = require('../config')
 const mockMovies = require('../mocks/movies')
 const get = require('util').promisify(request.get)
+const arg = require('arg')
 
 const lowerCaseKeys = object => {
   if (!object) {
@@ -19,7 +20,8 @@ const lowerCaseKeys = object => {
 
 module.exports = {
   async search (req, res) {
-    if(process.env.MOCK === 'true') {
+    const MOCK = arg({ "--mock": Boolean })["--mock"]
+    if(MOCK) {
       return res.send(mockMovies);
     }
 

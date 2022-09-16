@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "start-with-mock": "MOCK=true node src/app.js",
+    "start-with-mock": "node src/app.js --mock",
     "serve": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "arg": "^5.0.2",
     "bcrypt-nodejs": "0.0.3",
     "cors": "^2.8.5",
     "express": "^4.17.2",
