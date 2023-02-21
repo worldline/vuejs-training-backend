@@ -1,7 +1,0 @@
-language: ruby
-
-script:
-  - "sudo apt-get update -qy"
-  - "sudo apt-get install -y ruby-dev"
-  - "gem install dpl"
-  - "dpl --provider=heroku --app=vue-js-backend --api-key=$HEROKU_API_KEY"

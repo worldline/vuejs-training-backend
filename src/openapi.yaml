@@ -7,8 +7,6 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-  - url: https://vue-js-backend.herokuapp.com/
-    description: Production server on Heroku
   - url: http://localhost:3030
     description: Local testing (port 3030)
 tags:

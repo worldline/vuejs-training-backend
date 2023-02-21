@@ -3,8 +3,7 @@ const Sequelize = require('sequelize')
 const config = require('../config')
 const userModel = require('./User')
 
-const MOCK = arg({ "--mock": Boolean })["--mock"]
-const { database, user, password, options } = MOCK ? config.db.local : config.db.default
+const { database, user, password, options } = config.db.local
 const sequelize = new Sequelize(database, user, password, options)
 
 const models = {

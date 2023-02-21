@@ -34,11 +34,11 @@ module.exports = {
         })
       }
 
-      const moviesToFecth = body.search.map((movie, n = 0) => {
+      const moviesToFetch = body.search.map((movie, n = 0) => {
         return (n < config.omdbapi.maxCalls && n++) ? get(`http://www.omdbapi.com/?i=${movie.imdbid}&plot=full&apikey=${config.omdbapi.secretKey}`) : null
       })
 
-      const movies = await Promise.all(moviesToFecth.filter(item => !!item));
+      const movies = await Promise.all(moviesToFetch.filter(item => !!item));
       res.send(movies.map(movie => lowerCaseKeys(JSON.parse(movie.body))))
 
     } catch(error) {
