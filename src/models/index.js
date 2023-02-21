@@ -1,4 +1,3 @@
-const arg = require('arg')
 const Sequelize = require('sequelize')
 const config = require('../config')
 const userModel = require('./User')

@@ -3,7 +3,6 @@ const request = require('request')
 const config = require('../config')
 const mockMovies = require('../mocks/movies')
 const get = require('util').promisify(request.get)
-const arg = require('arg')
 
 const lowerCaseKeys = object => {
   if (!object) {
@@ -20,8 +19,7 @@ const lowerCaseKeys = object => {
 
 module.exports = {
   async search (req, res) {
-    const MOCK = arg({ "--mock": Boolean })["--mock"]
-    if(MOCK) {
+    if(config.omdbapi.secretKey == null) {
       return res.send(mockMovies);
     }
 

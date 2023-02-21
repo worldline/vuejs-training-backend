@@ -1,3 +1,11 @@
+const prompt = require("prompt-sync")()
+
+const OMDBAPI_KEY = prompt(`Enter an OMDB API Key:`);
+if (OMDBAPI_KEY == null) {
+  console.log(`No API key, mocked responses will be used instead`)
+}
+const MAX_OMDBAPI_CALLS = 4
+
 module.exports = {
   port: process.env.PORT || 3030,
   db: {
@@ -27,7 +35,7 @@ module.exports = {
     jwtSecret: process.env.JWT_SECRET || 'secret'
   },
   omdbapi: {
-    secretKey: process.env.OMDBAPI_KEY,
-    maxCalls: process.env.MAX_OMDBAPI_CALLS || 4
+    secretKey: OMDBAPI_KEY,
+    maxCalls: MAX_OMDBAPI_CALLS
   }
 }

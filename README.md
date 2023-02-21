@@ -9,8 +9,10 @@ This is the back-end API to run locally for the [Vue.js training session](https:
 $ npm install
 
 # start the server
-$ npm run serve
+$ npm run start
 ```
+
+You will need an OMDB API key to get movies results. If you don't have an API key, mocked responses will be used instead.
 
 ## Documentation
 
