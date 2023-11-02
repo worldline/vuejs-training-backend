@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")()
 
-const OMDBAPI_KEY = prompt(`Enter an OMDB API Key:`) || null;
+const OMDBAPI_KEY = process.env.OMDBAPI_KEY || prompt(`Enter an OMDB API Key:`) || null;
 if (OMDBAPI_KEY == null) {
   console.log(`No API key, mocked responses will be used instead`)
 }
